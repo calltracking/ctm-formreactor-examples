@@ -4,40 +4,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script async src="//392579.cctm.xyz/t.js"></script>
+    <!-- TODO replace the next line with your CTM Tracking Code  -->
+    <!-- https://app.calltrackingmetrics.com/accounts/tracking_script_settings -->
+    <script async src="//account_id.tctm.co/t.js"></script>
     <title>JS FormReactor</title>
   </head>
   <body>
-    <!-- page content -->
-    <h1>Hello, World!</h1>
-    <h2>Call Now! 888-555-1212</h2>
-    <form id="form" action="">
-      <ul>
-        <li>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name">
-        </li>
-        <li>
-          <label for="msg">Phone:</label>
-          <input type="tel" id="phone"></input>
-        </li>
-        <li>
-          <label for="mail">Email:</label>
-          <input type="email" id="email" name="email">
-        </li>
-        <li>
-          <label for="account_id">Account ID</label>
-          <input type="text" id="account"></input>
-        </li>
-        <li class="button">
-          <button type="submit" onclick="submitFormReactor()">Submit</button>
-        </li>
-      </ul>
-    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="px-4 py-5 my-5 text-center">
+      <h1>JavaScript FormReactor</h1>
+      <h2>Call Now! 888-555-1212</h2>
+      <div class="container-md">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col">
+            <form id="form" action="">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Name">
+                <label for="name">Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="tel" class="form-control" id="phone" placeholder="Phone">
+                <label for="phone" class="form-label">Phone</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                <label for="mail" class="form-label">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="account" placeholder="Account ID">
+                <label for="account_id" class="form-label">Account ID</label>
+              </div>
+              <button type="submit" class="btn btn-primary" onclick="submitFormReactor()">Submit</button>
+            </form>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
       function submitFormReactor() {
         //debugger;
+        // TODO replace the placeholder with your CTM FormReactor ID and Key
+        // https://app.calltrackingmetrics.com/form_reactors
+        // create or edit a FormReactor and find the ID and API Key in the Using FormReactor section
+        // the ID is the string in the URL that starts with FRT
         const formReactorId  = 'FRT...';
         const formReactorKey = 'key...';
         const data = new FormData();
@@ -64,8 +77,6 @@
 
         xhr.open("POST", `https://api.calltrackingmetrics.com/api/v1/formreactor/${formReactorId}?key=${formReactorKey}`, false);
         xhr.send(data);
-
-        //return false;
       }
     </script>
   </body>

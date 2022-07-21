@@ -5,7 +5,7 @@ Simple examples of implementing CallTrackingMetrics FormReactors
 There are comments and TODOs in the code. You will need to create a basic FormReactor. You do not need to add any special fields. If you add your CTM Tracking Code and setup a tracking number, tracking source, and target number, you should be able to get visitor data.
 
 ## testing
-You can use python to run a simple server. Run one of the following and browse to http://localhost:8000
+You can use python to run a simple server. Run one of the following in the repository directory and browse to http://localhost:8000/form-js.html
 ### python 2.x
 ```bash
 python -m SimpleHTTPServer 8000
